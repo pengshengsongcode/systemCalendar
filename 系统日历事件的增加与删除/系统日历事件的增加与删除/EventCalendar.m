@@ -74,12 +74,11 @@ static EventCalendar *calendar;
     event.allDay = YES;
     event.notes = remark;
 
-    NSDate *lastDay = [NSDate dateWithTimeInterval:-24*60*60 sinceDate:startDate];
+//    NSDate *lastDay = [NSDate dateWithTimeInterval:-24*60*60 sinceDate:startDate];
     
 //    NSString *string = [NSString stringWithFormat:@"%@ 09:00:00", [lastDay stringValue]];
 //
 //    NSDate *lastDay_9 = [string defaultDate];
-    
     
 #warning addAlarm 为 添加提醒时间，系统默认使用本地推送提醒
     
@@ -215,20 +214,20 @@ static EventCalendar *calendar;
 
 - (BOOL)isHasEventWithOrderNo:(NSString *)orderNo {
     
-    if (NULLString(orderNo)) {
-        return NO;
-    }
+//    if (NULLString(orderNo)) {
+//        return NO;
+//    }
+//    
+//    NSString *eventIdentifier = [[NSUserDefaults standardUserDefaults] stringForKey:orderNo];
+//    
+//    EKEvent *event = [self.eventStore eventWithIdentifier:eventIdentifier];
+//    
+//    if (event && isNotNullString(eventIdentifier)) {
     
-    NSString *eventIdentifier = [[NSUserDefaults standardUserDefaults] stringForKey:orderNo];
-    
-    EKEvent *event = [self.eventStore eventWithIdentifier:eventIdentifier];
-    
-    if (event && isNotNullString(eventIdentifier)) {
-        
         return YES;
-    }else {
-        return NO;
-    }
+//    }else {
+//        return NO;
+//    }
     
 }
 
