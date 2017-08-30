@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^OperationSucceed)(BOOL isSucceed);
+
 @interface EventCalendar : NSObject
 
 + (instancetype)sharedEventCalendar;
 
-- (void)createEventCalendarTitle:(NSString *)title startDate:(NSDate *)startDate endDate:(NSDate *)endDate remark:(NSString *)remark orderNo:(NSString *)orderNo;
+- (void)createEventCalendarTitle:(NSString *)title startDate:(NSDate *)startDate endDate:(NSDate *)endDate remark:(NSString *)remark orderNo:(NSString *)orderNo operationSucceed:(OperationSucceed)operationSucceed;
 
-- (void)deleteEventWithEventIdentifier:(NSString *)eventIdentifier;
+- (void)deleteEventWithOrderNo:(NSString *)orderNo operationSucceed:(OperationSucceed)operationSucceed;
+
+- (BOOL)isHasEventWithOrderNo:(NSString *)orderNo;
 
 @end
